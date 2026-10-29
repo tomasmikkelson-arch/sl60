@@ -285,7 +285,8 @@ dialog::backdrop { background: rgba(10, 14, 40, .55); }
 
 footer.foot { padding-block: 48px 40px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; flex-wrap: wrap; }
 footer.foot b { color: var(--ink); font: 700 16px/1.3 var(--display); }
-footer.foot span { text-align: right; margin-left: auto; }
+footer.foot { justify-content: center; text-align: center; }
+footer.foot span { text-align: center; }
 .simmeta { display: flex; flex-wrap: wrap; gap: 6px; }
 
 @media (max-width: 1080px) {
@@ -317,7 +318,6 @@ footer.foot span { text-align: right; margin-left: auto; }
 }
 @media (max-width: 560px) {
   .topbar { position: static; }
-  footer.foot span { text-align: left; margin-left: 0; }
   .qnav .btn { flex: 1; padding-inline: 12px; }
   .topbar .wrap { padding-block: 16px; }
   .hero { padding-block: 28px 14px; }
@@ -603,7 +603,7 @@ footer.foot span { text-align: right; margin-left: auto; }
   </section>
 </main>
 
-<footer class="wrap foot"><span>SLAPP-справи ІМІ, 2015–2026</span></footer>
+<footer class="wrap foot"><span><b>SLAPP-справи ІМІ</b>, 2015–2026</span></footer>
 
 <dialog id="dlg" aria-labelledby="dlg-title"><div class="dlg" id="dlg-body"></div></dialog>
 
