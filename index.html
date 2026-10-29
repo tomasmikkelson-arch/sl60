@@ -239,18 +239,45 @@ dialog::backdrop { background: rgba(10, 14, 40, .55); }
 .disc { background: var(--yellow-soft); border-radius: var(--r15); padding: 14px 16px; font-size: 14px; margin-top: 18px; }
 
 /* про дані */
-.about { padding-block: 32px 0; }
-.about h1 { font: 700 clamp(36px, 4.6vw, 58px)/1 var(--display); letter-spacing: -0.03em; margin: 0 0 16px; }
-.prose p { max-width: 70ch; margin: 0 0 12px; font-size: 16.5px; }
-.prose ul { max-width: 70ch; padding-left: 20px; margin: 0 0 12px; display: grid; gap: 6px; }
+.about { padding-block: 36px 0; }
+.ab-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 24px 40px; align-items: center; }
+.ab-hero h1 { font: 700 clamp(44px, 6vw, 84px)/.94 var(--display); letter-spacing: -0.035em; margin: 0 0 18px; }
+.ab-hero .lead { font-size: 17.5px; color: var(--ink-2); max-width: 52ch; margin: 0; }
+.ab-src { background: var(--hero); color: var(--on-hero); border-radius: var(--r60); padding: 30px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
+.ab-src .t { grid-column: 1 / -1; font: 500 16px/1.4 var(--display); opacity: .9; margin: 0 0 4px; }
+.ab-src .fact b { font-size: 40px; }
+.ab-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.ab-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tile { background: var(--field); border-radius: var(--r15); padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.tile .k { font: 700 13px/1 var(--display); color: var(--blue); letter-spacing: .04em; }
+.tile b { font: 700 17px/1.25 var(--display); letter-spacing: -0.005em; }
+.tile p { margin: 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+.tile .pills { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 2px; }
+.tile .pill { background: var(--card); }
+.keyrow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.key { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; align-items: start; background: var(--field); border-radius: var(--r15); padding: 16px 18px; }
+.key .dot { width: 14px; height: 14px; border-radius: 50%; margin-top: 4px; border: 2px solid var(--muted); }
+.key .dot.ev { background: var(--blue); border-color: var(--blue); }
+.key .dot.yes { background: var(--red); border-color: var(--red); }
+.key b { display: block; font-size: 15px; }
+.key span { font-size: 14px; color: var(--ink-2); }
+.ab-cta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 32px; align-items: center; background: var(--yellow-soft); border-radius: var(--r30); padding: 28px 30px; margin-top: 14px; }
+.ab-cta h2 { font: 700 26px/1.1 var(--display); letter-spacing: -0.02em; margin: 0 0 6px; }
+.ab-cta p { margin: 0; color: var(--ink-2); max-width: 62ch; }
+.ab-cta .row-btns { display: flex; flex-wrap: wrap; gap: 10px; }
 
 footer.foot { padding-block: 48px 40px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; flex-wrap: wrap; }
 footer.foot b { color: var(--ink); font: 700 16px/1.3 var(--display); }
 footer.foot span { text-align: right; margin-left: auto; }
 .simmeta { display: flex; flex-wrap: wrap; gap: 6px; }
 
+@media (max-width: 1080px) {
+  .ab-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 920px) {
   .hero, .test, .grid2 { grid-template-columns: minmax(0, 1fr); }
+  .ab-hero, .ab-cta { grid-template-columns: minmax(0, 1fr); }
+  .keyrow { grid-template-columns: minmax(0, 1fr); }
   .filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .filters .q { grid-column: 1 / -1; }
   .row { grid-template-columns: 48px minmax(0, 1fr) auto; }
@@ -268,6 +295,10 @@ footer.foot span { text-align: right; margin-left: auto; }
   .tabs a { flex: 1; text-align: center; padding: 9px 8px 8px; font-size: 13.5px; }
   .block, .qcard, .res-head, .dlg { padding: 22px 18px; }
   .facts { padding: 24px 20px; border-radius: var(--r30); }
+  .ab-src { padding: 24px 20px; border-radius: var(--r30); }
+  .ab-src .fact b { font-size: 30px; }
+  .ab-grid { grid-template-columns: minmax(0, 1fr); }
+  .ab-cta { padding: 22px 18px; }
   .fact { padding: 14px 14px; }
   .fact b { font-size: 26px; }
   #regions { grid-template-columns: minmax(0, 1fr); }
@@ -401,18 +432,73 @@ footer.foot span { text-align: right; margin-left: auto; }
   <!-- ═════════ ПРО ДАНІ ═════════ -->
   <section id="v-pro" class="wrap" hidden>
     <div class="about">
-      <h1>Про дані</h1>
-      <div class="block prose">
-        <p>Застосунок побудовано на таблиці ІМІ «SLAPP-справи 2015–2026». У ній <span id="pro-count">60</span> справ, кожну описано за однаковою схемою: суд, позивач, відповідач, обставини, вимоги, результат розгляду, ознаки SLAPP, адвокати та посилання на матеріали ІМІ.</p>
-        <p>Ознаки SLAPP оцінено за алгоритмом коаліції CASE (Coalition Against SLAPPs in Europe). Це сім питань: чи стосується публікація суспільного інтересу, чи непропорційні вимоги, чи є процесуальні маневри, чи має позивач економічну перевагу, чи є в позову підґрунтя, чи використовують його для залякування і чи є він частиною ширшої кампанії. Якщо в таблиці по якійсь ознаці написано «Не встановлено», у картці справи вона позначена порожнім колом.</p>
-        <p>Для графіків ми додатково розмітили кожну справу:</p>
-        <ul>
-          <li><b>Тип позивача</b> визначено за описом позивача в таблиці.</li>
-          <li><b>Сума вимог</b> означає заявлену моральну шкоду в гривнях, якщо її вказано; судові витрати сюди не входять.</li>
-          <li><b>Результат</b>: «на користь медіа», якщо суд відмовив у позові; «на користь позивача», якщо позов задоволено хоча б частково і це останнє відоме рішення; «без розгляду», якщо позов відкликали, залишили без розгляду чи закрили провадження; решта справ тривають або їхній результат невідомий.</li>
-          <li><b>Регіон</b> означає область суду, а якщо суд невідомий, то регіон медіа.</li>
-        </ul>
-        <p>Більше про явище SLAPP і законопроєкт, який зараз готують в Україні, можна прочитати в тексті ІМІ <a href="https://imi.org.ua/monitorings/slapp-pozovy-proty-media-ta-zhurnalistiv-shcho-tse-i-yak-zahystyty-svobodu-slova" target="_blank" rel="noopener">«SLAPP-позови проти медіа та журналістів: що це і як захистити свободу слова»</a>.</p>
+      <div class="ab-hero">
+        <div>
+          <h1>Про дані</h1>
+          <p class="lead">Застосунок побудовано на таблиці ІМІ «SLAPP-справи 2015–2026». Кожну справу описано за однаковою схемою, тому їх можна порівнювати між собою, шукати закономірності й підбирати схожі випадки в тесті.</p>
+        </div>
+        <div class="ab-src">
+          <p class="t">Що є в таблиці</p>
+          <div class="fact"><b class="num" id="pro-count">60</b><span>справ проти медіа та журналістів</span></div>
+          <div class="fact"><b class="num" id="pro-years">12</b><span>років спостережень, з 2015 до 2026</span></div>
+          <div class="fact"><b class="num">8</b><span>ознак SLAPP за алгоритмом CASE для кожної справи</span></div>
+          <div class="fact"><b class="num" id="pro-src">0</b><span>посилань на матеріали ІМІ про ці справи</span></div>
+        </div>
+      </div>
+
+      <div class="block" style="margin-top:56px">
+        <h2>Як описано кожну справу</h2>
+        <p class="sub">Ці поля відкриваються в картці справи в розділі «Справи».</p>
+        <div class="ab-grid">
+          <div class="tile"><b>Сторони</b><p>Позивач і відповідач: хто подав позов і проти кого.</p></div>
+          <div class="tile"><b>Обставини</b><p>Яка публікація чи розслідування стали приводом для позову.</p></div>
+          <div class="tile"><b>Вимоги</b><p>Спростування, видалення, моральна шкода, вибачення, арешт майна.</p></div>
+          <div class="tile"><b>Результат</b><p>Рішення першої інстанції, апеляції та Верховного Суду, якщо вони відомі.</p></div>
+          <div class="tile"><b>Суд і дати</b><p>Де розглядали справу і коли подали позов.</p></div>
+          <div class="tile"><b>Ознаки SLAPP</b><p>Оцінка за вісьмома питаннями алгоритму CASE.</p></div>
+          <div class="tile"><b>Захист</b><p>Адвокати й організації, які представляли медіа.</p></div>
+          <div class="tile"><b>Джерела</b><p>Новини й матеріали ІМІ, з яких зібрано інформацію.</p></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Алгоритм CASE</h2>
+        <p class="sub">Коаліція CASE (Coalition Against SLAPPs in Europe) пропонує оцінювати позов за такими питаннями. Чим більше відповідей «так», тим більше позов схожий на SLAPP.</p>
+        <div class="ab-grid">
+          <div class="tile"><span class="k">1</span><b>Суспільний інтерес</b><p>Чи стосується публікація теми, важливої для суспільства?</p></div>
+          <div class="tile"><span class="k">2</span><b>Непропорційні вимоги</b><p>Чи надмірні суми та вимоги порівняно з публікацією?</p></div>
+          <div class="tile"><span class="k">3</span><b>Процесуальні маневри</b><p>Чи затягують процес, щоб збільшити витрати відповідача?</p></div>
+          <div class="tile"><span class="k">4</span><b>Економічна перевага</b><p>Чи має позивач значно більше ресурсів, ніж медіа?</p></div>
+          <div class="tile"><span class="k">5</span><b>Відсутність підґрунтя</b><p>Чи бракує позову юридичних або фактичних підстав?</p></div>
+          <div class="tile"><span class="k">6</span><b>Залякування</b><p>Чи використовують позов, щоб налякати журналістів?</p></div>
+          <div class="tile"><span class="k">7</span><b>Ширша кампанія</b><p>Чи є позов частиною системного переслідування?</p></div>
+          <div class="tile"><span class="k">8</span><b>Інші позови</b><p>Чи подавав цей позивач інші позови з ознаками SLAPP?</p></div>
+        </div>
+        <h3 style="font:700 18px/1.2 var(--display);margin:26px 0 12px">Як читати позначки в картці справи</h3>
+        <div class="keyrow">
+          <div class="key"><span class="dot ev"></span><span><b>Синє коло</b><span>Оцінка суспільного інтересу публікації.</span></span></div>
+          <div class="key"><span class="dot yes"></span><span><b>Червоне коло</b><span>За цією ознакою є відомості в таблиці.</span></span></div>
+          <div class="key"><span class="dot"></span><span><b>Порожнє коло</b><span>У таблиці написано «Не встановлено».</span></span></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Що ми додали для графіків</h2>
+        <p class="sub">У таблиці ці дані записано текстом. Щоб порахувати статистику, ми розмітили кожну справу за чотирма полями.</p>
+        <div class="ab-grid">
+          <div class="tile"><b>Тип позивача</b><p>Визначено за описом позивача: політики, посадовці, бізнес, організації, приватні особи.</p></div>
+          <div class="tile"><b>Сума вимог</b><p>Заявлена моральна шкода в гривнях, якщо її вказано. Судові витрати не враховано.</p></div>
+          <div class="tile"><b>Результат</b><div class="pills"><span class="pill o-media"><i></i>Суд відмовив у позові</span><span class="pill o-plaintiff"><i></i>Позов задоволено</span><span class="pill o-dropped"><i></i>Відкликано чи закрито</span><span class="pill o-unknown"><i></i>Триває або невідомо</span></div></div>
+          <div class="tile"><b>Регіон</b><p>Область суду. Якщо суд невідомий, то регіон медіа.</p></div>
+        </div>
+      </div>
+
+      <div class="ab-cta">
+        <div><h2>Більше про SLAPP</h2><p>Що таке SLAPP-позови, як із ними борються в ЄС і який законопроєкт зараз готують в Україні, читайте в тексті ІМІ.</p></div>
+        <div class="row-btns">
+          <a class="btn btn-primary" href="https://imi.org.ua/monitorings/slapp-pozovy-proty-media-ta-zhurnalistiv-shcho-tse-i-yak-zahystyty-svobodu-slova" target="_blank" rel="noopener">Читати статтю</a>
+          <a class="btn btn-quiet" href="#test">Пройти тест</a>
+        </div>
       </div>
     </div>
   </section>
@@ -472,6 +558,8 @@ function renderFacts() {
   const pct = Math.round(S.won / S.decided * 100);
   $("#h-count").textContent = CASES.length;
   $("#pro-count").textContent = CASES.length;
+  $("#pro-years").textContent = S.years.length;
+  $("#pro-src").textContent = CASES.reduce((n, c) => n + c.sources.length, 0);
   $("#facts").innerHTML = `
     <div class="main"><b class="num">${pct}%</b><span>справ, у яких суд ухвалив рішення по суті, завершилися на користь медіа: ${S.won} із ${S.decided}. Але навіть виграна справа коштує редакції років судів і грошей на юристів.</span></div>
     <div class="fact"><b class="num">${fmtAmount(S.total).replace(" грн", "")}</b><span>гривень моральної шкоди вимагали сукупно в ${S.withAmt} справах, де відома сума</span></div>
