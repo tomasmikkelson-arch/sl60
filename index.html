@@ -46,9 +46,9 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* верхня смуга */
 .topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: color-mix(in srgb, var(--card) 94%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px; flex-wrap: wrap; }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 26px; flex-wrap: wrap; }
 .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink); }
-.brand svg { height: 42px; width: auto; display: block; }
+.brand svg { height: 48px; width: auto; display: block; }
 .brand span { font: 500 15px/1.2 var(--display); color: var(--ink-2); padding-left: 14px; border-left: 1px solid var(--line); }
 .lg-1 { fill: var(--blue); } .lg-2 { fill: var(--card); } .lg-3 { fill: var(--ink); }
 .tabs { display: flex; gap: 4px; background: var(--field); padding: 4px; border-radius: var(--r90); }
@@ -71,8 +71,8 @@ h1, h2, h3 { text-wrap: balance; }
 .o-media i { background: var(--o-media); } .o-dropped i { background: var(--o-drop); } .o-plaintiff i { background: var(--o-pl); } .o-unknown i { background: var(--o-unk); }
 
 /* герой */
-.hero { padding-block: 36px 14px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
-.hero h1 { font: 700 clamp(48px, 7.6vw, 104px)/.92 var(--display); letter-spacing: -0.035em; margin: 0 0 18px; }
+.hero { padding-block: 96px 14px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 72px; align-items: center; }
+.hero h1 { font: 700 clamp(44px, 6vw, 80px)/.94 var(--display); letter-spacing: -0.035em; margin: 0 0 18px; }
 .hero h1 em { font-style: normal; color: var(--blue); }
 .hero .lead { font-size: 17.5px; color: var(--ink-2); max-width: 54ch; margin: 0 0 18px; }
 .hero .cta { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -85,7 +85,7 @@ h1, h2, h3 { text-wrap: balance; }
 .fact span { display: block; margin-top: 7px; font-size: 14px; opacity: .9; line-height: 1.35; }
 
 /* блоки */
-.hero + .block { margin-top: clamp(64px, 10vw, 128px); }
+.hero + .block { margin-top: clamp(48px, 7vw, 90px); }
 .block { background: var(--card); border-radius: var(--r30); padding: 28px 30px; margin-top: 14px; min-width: 0; }
 .block h2 { font: 700 28px/1.08 var(--display); letter-spacing: -0.022em; margin: 0 0 6px; }
 .block .sub { color: var(--muted); font-size: 14.5px; margin: 0 0 20px; max-width: 72ch; }
@@ -184,7 +184,7 @@ dialog::backdrop { background: rgba(10, 14, 40, .55); }
 .dlg-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); }
 
 /* тест */
-.test { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 14px; padding-block: 32px 0; align-items: start; }
+.test { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 14px; padding-block: 80px 0; align-items: start; }
 .test-intro h1 { font: 700 clamp(38px, 5vw, 64px)/.98 var(--display); letter-spacing: -0.035em; margin: 0 0 12px; }
 .test-intro p { color: var(--ink-2); font-size: 16.5px; margin: 0; max-width: 60ch; }
 .qcard { background: var(--card); border-radius: var(--r30); padding: 28px 30px; margin-top: 18px; }
@@ -239,12 +239,11 @@ dialog::backdrop { background: rgba(10, 14, 40, .55); }
 .disc { background: var(--yellow-soft); border-radius: var(--r15); padding: 14px 16px; font-size: 14px; margin-top: 18px; }
 
 /* про дані */
-.about { padding-block: 36px 0; }
+.about { padding-block: 80px 0; }
 .ab-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 24px 40px; align-items: center; }
 .ab-hero h1 { font: 700 clamp(44px, 6vw, 84px)/.94 var(--display); letter-spacing: -0.035em; margin: 0 0 18px; }
 .ab-hero .lead { font-size: 17.5px; color: var(--ink-2); max-width: 52ch; margin: 0; }
 .ab-src { background: var(--hero); color: var(--on-hero); border-radius: var(--r60); padding: 30px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
-.ab-src .t { grid-column: 1 / -1; font: 500 16px/1.4 var(--display); opacity: .9; margin: 0 0 4px; }
 .ab-src .fact b { font-size: 40px; }
 .ab-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .ab-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -261,9 +260,13 @@ dialog::backdrop { background: rgba(10, 14, 40, .55); }
 .key .dot.yes { background: var(--red); border-color: var(--red); }
 .key b { display: block; font-size: 15px; }
 .key span { font-size: 14px; color: var(--ink-2); }
-.ab-cta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 32px; align-items: center; background: var(--yellow-soft); border-radius: var(--r30); padding: 28px 30px; margin-top: 14px; }
+.ab-cta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 32px; align-items: center; background: var(--green); color: #fff; border-radius: var(--r30); padding: 32px 34px; margin-top: 14px; }
 .ab-cta h2 { font: 700 26px/1.1 var(--display); letter-spacing: -0.02em; margin: 0 0 6px; }
-.ab-cta p { margin: 0; color: var(--ink-2); max-width: 62ch; }
+.ab-cta p { margin: 0; color: rgba(255,255,255,.88); max-width: 62ch; }
+.ab-cta .btn-primary { background: var(--yellow); color: #222; }
+.ab-cta .btn-primary:hover { background: #F0BC10; }
+.ab-cta .btn-quiet { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.6); }
+.ab-cta .btn-quiet:hover { color: #fff; box-shadow: inset 0 0 0 1.5px #fff; }
 .ab-cta .row-btns { display: flex; flex-wrap: wrap; gap: 10px; }
 
 footer.foot { padding-block: 48px 40px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; flex-wrap: wrap; }
@@ -277,6 +280,8 @@ footer.foot span { text-align: right; margin-left: auto; }
 @media (max-width: 920px) {
   .hero, .test, .grid2 { grid-template-columns: minmax(0, 1fr); }
   .ab-hero, .ab-cta { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-top: 64px; }
+  .test, .about { padding-top: 56px; }
   .keyrow { grid-template-columns: minmax(0, 1fr); }
   .filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .filters .q { grid-column: 1 / -1; }
@@ -290,7 +295,10 @@ footer.foot span { text-align: right; margin-left: auto; }
   footer.foot span { text-align: left; margin-left: 0; }
   .qnav .btn { flex: 1; padding-inline: 12px; }
   .brand span { display: none; }
-  .brand svg { height: 34px; }
+  .brand svg { height: 36px; }
+  .topbar .wrap { padding-block: 16px; }
+  .hero { padding-block: 40px 14px; }
+  .test, .about { padding-top: 40px; }
   .tabs { width: 100%; }
   .tabs a { flex: 1; text-align: center; padding: 9px 8px 8px; font-size: 13.5px; }
   .block, .qcard, .res-head, .dlg { padding: 22px 18px; }
@@ -438,7 +446,6 @@ footer.foot span { text-align: right; margin-left: auto; }
           <p class="lead">Застосунок побудовано на таблиці ІМІ «SLAPP-справи 2015–2026». Кожну справу описано за однаковою схемою, тому їх можна порівнювати між собою, шукати закономірності й підбирати схожі випадки в тесті.</p>
         </div>
         <div class="ab-src">
-          <p class="t">Що є в таблиці</p>
           <div class="fact"><b class="num" id="pro-count">60</b><span>справ проти медіа та журналістів</span></div>
           <div class="fact"><b class="num" id="pro-years">12</b><span>років спостережень, з 2015 до 2026</span></div>
           <div class="fact"><b class="num">8</b><span>ознак SLAPP за алгоритмом CASE для кожної справи</span></div>
