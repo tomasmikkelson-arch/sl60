@@ -301,24 +301,30 @@ footer.foot span { text-align: right; margin-left: auto; }
   .row .go { display: none; }
   .sim { grid-template-columns: minmax(0, 1fr); }
 }
+@media (max-width: 760px) {
+  .topbar .wrap { flex-direction: column; justify-content: center; gap: 14px; padding-block: 18px; }
+  .brand { justify-content: center; }
+  .tabs { width: 100%; max-width: 520px; }
+  .tabs a { flex: 1; text-align: center; padding: 12px 10px 11px; font-size: 15.5px; }
+}
 @media (max-width: 560px) {
   .topbar { position: static; }
   footer.foot span { text-align: left; margin-left: 0; }
   .qnav .btn { flex: 1; padding-inline: 12px; }
   .brand span { display: none; }
-  .brand svg { height: 36px; }
+  .brand svg { height: 40px; }
   .topbar .wrap { padding-block: 16px; }
   .hero { padding-block: 28px 14px; }
   .test, .about { padding-top: 28px; }
   .tabs { width: 100%; }
-  .tabs a { flex: 1; text-align: center; padding: 9px 8px 8px; font-size: 13.5px; }
+  .tabs a { flex: 1; text-align: center; padding: 12px 6px 11px; font-size: 15px; }
   .block, .qcard, .res-head, .dlg { padding: 22px 18px; }
   .facts { padding: 24px 20px; border-radius: var(--r30); }
   .ab-src { padding: 24px 20px; border-radius: var(--r30); }
   .ab-src .fact b { font-size: 30px; }
   .ab-grid { grid-template-columns: minmax(0, 1fr); }
   .ab-cta { padding: 22px 18px; }
-  .hero .cta .btn { padding: 12px 20px 11px; font-size: 15px; }
+  .hero .cta .btn { padding: 14px 22px 12px; font-size: 16px; }
   .how { padding: 22px 18px; }
   .how-steps { grid-template-columns: minmax(0, 1fr); }
   .qcard { margin-top: 22px; }
