@@ -75,7 +75,8 @@ h1, h2, h3 { text-wrap: balance; }
 .hero h1 { font: 700 clamp(50px, 6.9vw, 92px)/.94 var(--display); letter-spacing: -0.035em; margin: 0 0 18px; }
 .hero h1 em { font-style: normal; color: var(--blue); }
 .hero .lead { font-size: 17.5px; color: var(--ink-2); max-width: 54ch; margin: 0 0 18px; }
-.hero .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .cta .btn { padding: 15px 26px 13px; font-size: 17px; }
 .facts { background: var(--hero); color: var(--on-hero); border-radius: var(--r60); padding: 32px 32px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
 .facts .main { grid-column: 1 / -1; padding: 4px 2px 10px; }
 .facts .main b { display: block; font: 700 clamp(64px, 8vw, 112px)/.9 var(--display); letter-spacing: 0.01em; font-kerning: normal; }
@@ -184,9 +185,9 @@ dialog::backdrop { background: rgba(10, 14, 40, .55); }
 
 /* тест */
 .test { padding-block: 48px 0; }
-.test-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 72px; align-items: end; }
-.test-intro h1 { font: 700 clamp(44px, 6vw, 84px)/.94 var(--display); letter-spacing: -0.035em; margin: 0; }
-.test-intro p { color: var(--ink-2); font-size: 18px; line-height: 1.55; margin: 0 0 6px; max-width: 52ch; }
+.test-intro { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 16px 56px; align-items: center; }
+.test-intro h1 { font: 700 clamp(44px, 5.6vw, 80px)/.94 var(--display); letter-spacing: -0.035em; margin: 0; white-space: nowrap; }
+.test-intro p { color: var(--muted); font-size: 15px; line-height: 1.55; margin: 0; max-width: 46ch; justify-self: end; }
 .test-intro p b { color: var(--ink); font-weight: 700; }
 .qcard { background: var(--card); border-radius: var(--r30); padding: 32px 36px; margin-top: 32px; }
 .progress { display: flex; gap: 4px; margin-bottom: 20px; }
@@ -286,6 +287,8 @@ footer.foot span { text-align: right; margin-left: auto; }
   .hero, .test, .grid2 { grid-template-columns: minmax(0, 1fr); }
   .ab-hero, .ab-cta { grid-template-columns: minmax(0, 1fr); }
   .test-intro { grid-template-columns: minmax(0, 1fr); }
+  .test-intro h1 { white-space: normal; }
+  .test-intro p { justify-self: start; }
   .how-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .opts { grid-template-columns: minmax(0, 1fr); }
   .hero { padding-top: 40px; }
@@ -315,6 +318,7 @@ footer.foot span { text-align: right; margin-left: auto; }
   .ab-src .fact b { font-size: 30px; }
   .ab-grid { grid-template-columns: minmax(0, 1fr); }
   .ab-cta { padding: 22px 18px; }
+  .hero .cta .btn { padding: 12px 20px 11px; font-size: 15px; }
   .how { padding: 22px 18px; }
   .how-steps { grid-template-columns: minmax(0, 1fr); }
   .qcard { margin-top: 22px; }
